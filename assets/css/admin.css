@@ -1,0 +1,470 @@
+/* ==========================================================================
+   PawPal - Admin Panel Styling (Dark Sidebar Theme & Premium UI)
+   ========================================================================== */
+
+:root {
+    --admin-sidebar-bg: #0c1020;
+    --admin-sidebar-hover: rgba(255, 255, 255, 0.05);
+    --admin-sidebar-active: linear-gradient(135deg, rgba(79, 70, 229, 0.15), rgba(244, 63, 94, 0.1));
+    --admin-sidebar-border: rgba(255, 255, 255, 0.08);
+    --admin-card-bg: #ffffff;
+    --admin-body-bg: #f8fafc;
+    --admin-border: #e2e8f0;
+}
+
+/* Base resets & layout */
+body.admin-body {
+    background-color: var(--admin-body-bg);
+    color: #0f172a;
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+}
+
+/* Sidebar Styling */
+.admin-sidebar {
+    width: 260px;
+    min-width: 260px;
+    background-color: var(--admin-sidebar-bg);
+    border-right: 1px solid var(--admin-sidebar-border);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-sidebar .brand-area {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--admin-sidebar-border);
+}
+
+.admin-sidebar .sidebar-nav {
+    padding: 1.5rem 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.admin-sidebar .sidebar-nav::-webkit-scrollbar {
+    width: 4px;
+}
+.admin-sidebar .sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+}
+
+.admin-sidebar .nav-group-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #475569;
+    margin-bottom: 0.75rem;
+    padding-left: 0.75rem;
+}
+
+.admin-sidebar .nav-link {
+    color: #94a3b8;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.35rem;
+    transition: all 0.2s ease;
+}
+
+.admin-sidebar .nav-link i {
+    font-size: 1.1rem;
+    transition: transform 0.2s ease;
+}
+
+.admin-sidebar .nav-link:hover {
+    color: #ffffff;
+    background-color: var(--admin-sidebar-hover);
+    transform: translateX(4px);
+}
+
+.admin-sidebar .nav-link:hover i {
+    transform: scale(1.1);
+}
+
+.admin-sidebar .nav-link.active {
+    color: #ffffff;
+    background: var(--admin-sidebar-active);
+    border-left: 4px solid var(--accent);
+    padding-left: calc(1rem - 4px);
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.admin-sidebar .user-profile-widget {
+    padding: 1.25rem;
+    border-top: 1px solid var(--admin-sidebar-border);
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Main Content Layout */
+.admin-wrapper {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.admin-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--admin-border);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+}
+
+.admin-content {
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+/* Stat Cards */
+.admin-stat-card {
+    background-color: #ffffff;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(79, 70, 229, 0.3);
+}
+
+.admin-stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary), var(--accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.admin-stat-card:hover::after {
+    opacity: 1;
+}
+
+.admin-stat-card .card-info h6 {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.admin-stat-card .card-info h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0;
+}
+
+.admin-stat-card .card-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.admin-stat-card .card-icon.primary-bg {
+    background-color: rgba(79, 70, 229, 0.1);
+    color: var(--primary);
+}
+
+.admin-stat-card .card-icon.accent-bg {
+    background-color: rgba(244, 63, 94, 0.1);
+    color: var(--accent);
+}
+
+.admin-stat-card .card-icon.success-bg {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+}
+
+.admin-stat-card .card-icon.warning-bg {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+/* Premium Dashboard Widgets */
+.admin-card {
+    background-color: #ffffff;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.admin-card .card-header {
+    background-color: transparent;
+    border-bottom: 1px solid var(--admin-border);
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-card .card-body {
+    padding: 1.5rem;
+}
+
+/* Data Table Styling */
+.table-responsive {
+    border-radius: 12px;
+    border: 1px solid var(--admin-border);
+}
+
+.admin-table {
+    margin-bottom: 0;
+}
+
+.admin-table th {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    padding: 1rem 1.25rem;
+    border-bottom: 2px solid var(--admin-border);
+}
+
+.admin-table td {
+    padding: 1rem 1.25rem;
+    vertical-align: middle;
+    color: #334155;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table tr {
+    transition: background-color 0.15s ease;
+}
+
+.admin-table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Custom Table Badges */
+.admin-badge {
+    padding: 0.35em 0.75em;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.admin-badge.status-pending {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #b45309;
+}
+
+.admin-badge.status-approved {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #047857;
+}
+
+.admin-badge.status-rejected {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #b91c1c;
+}
+
+.admin-badge.status-available {
+    background-color: rgba(6, 182, 212, 0.15);
+    color: #0e7490;
+}
+
+.admin-badge.status-adopted {
+    background-color: rgba(79, 70, 229, 0.15);
+    color: #4338ca;
+}
+
+/* User avatar helper */
+.admin-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+}
+
+.admin-pet-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+}
+
+/* Stat bar details */
+.admin-progress-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 120px;
+}
+
+.admin-progress-stat .stat-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+}
+
+.admin-progress-stat .progress {
+    height: 6px;
+    border-radius: var(--radius-full);
+}
+
+/* Responsive collapse trigger */
+.admin-toggle-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #334155;
+    cursor: pointer;
+}
+
+/* Form Styles */
+.admin-form-group {
+    margin-bottom: 1.25rem;
+}
+
+.admin-form-group label {
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.admin-control {
+    border-radius: 10px;
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--admin-border);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.admin-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.admin-control::placeholder {
+    color: #94a3b8;
+}
+
+/* Image Upload Preview area */
+.image-upload-preview {
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.image-upload-preview:hover {
+    border-color: var(--primary);
+    background-color: rgba(79, 70, 229, 0.02);
+}
+
+.image-upload-preview img {
+    max-height: 150px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 991.98px) {
+    .admin-sidebar {
+        transform: translateX(-100%);
+    }
+    .admin-sidebar.show {
+        transform: translateX(0);
+    }
+    .admin-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+    .admin-toggle-btn {
+        display: block;
+    }
+}
+
+/* Search bar on Header */
+.admin-search-wrapper {
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+}
+
+.admin-search-wrapper i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+}
+
+.admin-search-wrapper input {
+    padding-left: 40px !important;
+}
+
+/* Charts grid styling */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}

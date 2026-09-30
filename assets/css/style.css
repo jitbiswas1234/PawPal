@@ -1,0 +1,1665 @@
+/* ==========================================================================
+   PawPal - Custom Style Sheets (Premium UI Design)
+   ========================================================================== */
+
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --accent: #f43f5e;
+    --accent-hover: #e11d48;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --info: #06b6d4;
+    
+    --bg-dark: #0f172a;
+    --bg-card-dark: #1e293b;
+    --text-light: #f8fafc;
+    --text-muted-dark: #94a3b8;
+    
+    --bg-light: #f8fafc;
+    --bg-card-light: #ffffff;
+    --text-dark: #0f172a;
+    --text-muted-light: #64748b;
+    
+    /* Active Theme Defaults (Light Mode default, custom utilities match user preference) */
+    --theme-bg: var(--bg-light);
+    --theme-card-bg: var(--bg-card-light);
+    --theme-text: var(--text-dark);
+    --theme-text-muted: var(--text-muted-light);
+    --border-color: #e2e8f0;
+    
+    --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-full: 9999px;
+    
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Navigation Bar */
+.bg-custom-dark {
+    background-color: #0c1020 !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-icon {
+    font-size: 1.65rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-text {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.text-accent {
+    color: var(--accent) !important;
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-accent:hover, .btn-accent:focus {
+    background-color: var(--accent-hover);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.35);
+}
+
+.nav-stats-badge {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-full);
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.profile-btn {
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-weight: 500;
+}
+
+.profile-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Page Content Wrapper */
+.page-content-wrapper {
+    flex: 1 0 auto;
+    padding-bottom: 3rem;
+}
+
+/* Glassmorphic and modern cards */
+.glass-card {
+    background: var(--theme-card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Gradient Hero Section */
+.hero-gradient {
+    background: radial-gradient(circle at top right, #312e81 0%, #0f172a 100%);
+    color: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 4rem 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-shape {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(244, 63, 94, 0.2));
+    border-radius: 50%;
+    filter: blur(80px);
+    top: -50px;
+    right: -50px;
+}
+
+/* Color-coded Progress Bars */
+.stat-bar-container {
+    margin-bottom: 1.15rem;
+}
+
+.stat-label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    color: var(--theme-text-muted);
+}
+
+.custom-progress {
+    height: 10px;
+    background-color: #e2e8f0;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.custom-progress-bar {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s ease;
+}
+
+/* Pet Cards Grid */
+.pet-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--theme-card-bg);
+    transition: all 0.3s ease;
+}
+
+.pet-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pet-card-img-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.pet-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pet-card:hover .pet-card-img {
+    transform: scale(1.05);
+}
+
+.pet-card-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-sm);
+    z-index: 2;
+}
+
+.mood-badge {
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Interactive Care Dashboard */
+.pet-avatar-stage {
+    background: radial-gradient(circle, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pet-avatar-display {
+    max-width: 250px;
+    max-height: 250px;
+    z-index: 2;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+}
+
+.pet-avatar-stage.sick {
+    background: radial-gradient(circle, #fef2f2 0%, #fee2e2 100%);
+}
+
+.pet-avatar-stage.hungry {
+    background: radial-gradient(circle, #fff7ed 0%, #ffedd5 100%);
+}
+
+.pet-avatar-stage.sleepy {
+    background: radial-gradient(circle, #faf5ff 0%, #f3e8ff 100%);
+}
+
+.pet-stage-shadow {
+    position: absolute;
+    width: 160px;
+    height: 18px;
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    bottom: 50px;
+    filter: blur(4px);
+    z-index: 1;
+}
+
+/* Care Action Buttons */
+.care-btn {
+    border-radius: var(--radius-md);
+    padding: 1rem 0.75rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0,0,0,0.05);
+    background-color: var(--theme-card-bg);
+    color: var(--theme-text);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+}
+
+.care-btn i {
+    font-size: 1.6rem;
+    transition: transform 0.2s ease;
+}
+
+.care-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.care-btn:hover i {
+    transform: scale(1.2);
+}
+
+.care-btn:active {
+    transform: translateY(-1px);
+}
+
+.care-btn.cooldown {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.cooldown-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    border-radius: var(--radius-md);
+}
+
+/* Sound and Confetti Visual Effects */
+.sparkle-effect {
+    position: absolute;
+    pointer-events: none;
+    font-size: 1.5rem;
+    animation: floatUp 0.8s ease-out forwards;
+    z-index: 10;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Animations */
+.bounce-animation {
+    animation: bounce 0.6s ease;
+}
+
+.shake-animation {
+    animation: shake 0.5s ease;
+}
+
+.spin-animation {
+    animation: spin 0.6s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px) scaleY(1.05); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Shop and items */
+.shop-card {
+    border-radius: var(--radius-md);
+    background: var(--theme-card-bg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.shop-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.item-img-wrapper {
+    height: 150px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-img {
+    max-height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.shop-card:hover .item-img {
+    transform: scale(1.12);
+}
+
+/* Notifications Bell Styling */
+.notif-dropdown {
+    width: 320px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.notif-item {
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.notif-item:hover {
+    background-color: #f8fafc;
+}
+
+.notif-item.unread {
+    background-color: #eff6ff;
+}
+
+.notif-icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.extra-small {
+    font-size: 0.75rem;
+}
+
+.notif-badge {
+    animation: bounceBadge 2s infinite;
+}
+
+@keyframes bounceBadge {
+    0%, 100%, 20%, 50%, 80% { transform: translate(50%, -50%) translateY(0); }
+    40% { transform: translate(50%, -50%) translateY(-5px); }
+    60% { transform: translate(50%, -50%) translateY(-3px); }
+}
+
+/* Timeline/Activity Log */
+.timeline-list {
+    position: relative;
+    padding-left: 1.5rem;
+    border-left: 2px solid #e2e8f0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    left: calc(-1.5rem - 7px);
+    top: 4px;
+    border: 2px solid #ffffff;
+    box-shadow: var(--shadow-sm);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Helper styles */
+.text-xs {
+    font-size: 0.75rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+.bg-custom-dark-card {
+    background-color: #1a2035;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--theme-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Dashboard streak display */
+.streak-box {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #ffffff;
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    box-shadow: var(--shadow-md);
+}
+
+.streak-number {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+/* XP Circle Progress */
+.xp-progress-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary) calc(var(--percent) * 1%), #e2e8f0 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.xp-progress-circle::after {
+    content: '';
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: var(--theme-card-bg);
+}
+
+.xp-progress-text {
+    position: relative;
+    z-index: 2;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   PawPal - Interactive Pet Game Animations
+   ========================================================================== */
+
+/* Pet Speech Bubble */
+.pet-speech-bubble {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: #ffffff;
+    border: 3px solid var(--primary);
+    border-radius: 20px;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pet-speech-bubble.active {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px) scale(1);
+}
+
+.pet-speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 12px 10px 0;
+    border-style: solid;
+    border-color: #ffffff transparent transparent;
+    display: block;
+    width: 0;
+    z-index: 11;
+}
+
+.pet-speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 14px 12px 0;
+    border-style: solid;
+    border-color: var(--primary) transparent transparent;
+    display: block;
+    width: 0;
+    z-index: 9;
+}
+
+/* Game Overlay Elements */
+.game-overlay-element {
+    position: absolute;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Food Bowl Eating Animation */
+.food-bowl-anim {
+    bottom: 40px;
+    left: 30%;
+    width: 50px;
+    height: 40px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHBhdGggZD0nTTggNDRjMC02IDYtMTIgMTItMTJoMjRjNiAwIDEyIDYgMTIgMTJ2NEg4eicgZmlsbD0nI2Y1OWUwYicvPjxlbGxpcHNlIGN4PSczMicgY3k9JzM2JyByeD0nMTgnIHJ5PSc2JyBmaWxsPScjYjQ1MzA5Jy8+PGNpcmNsZSBjeD0nMjQnIGN5PSczNicgcj0nMicgZmlsbD0nIzc4MzUwZicvPjxjaXJjbGUgY3g9JzMyJyBjeT0nMzUnIHI9JzInIGZpbGw9JyM3ODM1MGYnLz48Y2lyY2xlIGN4PSc0MCcgY3k9JzM2JyByPScyJyBmaWxsPScjNzgzNTBmJy8+PC9zdmc+") no-repeat center/contain;
+    animation: slideEat 1.5s ease-out forwards;
+}
+
+@keyframes slideEat {
+    0% {
+        transform: translate(-100px, 50px) rotate(-45deg);
+        opacity: 0;
+    }
+    30% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    45%, 65%, 85% {
+        transform: translate(5px, 0) scaleY(0.9);
+    }
+    55%, 75% {
+        transform: translate(0, 0) scaleY(1);
+    }
+    100% {
+        transform: translate(0, 0) scale(0.6);
+        opacity: 0;
+    }
+}
+
+/* Water Splash Animation */
+.water-glass-anim {
+    bottom: 50px;
+    left: 30%;
+    width: 45px;
+    height: 45px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHBhdGggZD0nTTE2IDEyaDMybC02IDQwSDIyeicgZmlsbD0nI2UyZThmMCcgb3BhY2l0eT0nMC43Jy8+PHBhdGggZD0nTTIwIDMyaDI0bC0zIDIwSDIzeicgZmlsbD0nIzA2YjZkNCcvPjwvc3ZnPg==") no-repeat center/contain;
+    animation: slideDrink 1.5s ease-out forwards;
+}
+
+@keyframes slideDrink {
+    0% {
+        transform: translate(-100px, 50px) rotate(-60deg);
+        opacity: 0;
+    }
+    35% {
+        transform: translate(0, -10px) rotate(-15deg);
+        opacity: 1;
+    }
+    60% {
+        transform: translate(15px, -15px) rotate(45deg);
+    }
+    100% {
+        transform: translate(30px, 30px) rotate(90deg);
+        opacity: 0;
+    }
+}
+
+/* Playing Ball Bouncing Animation */
+.toy-ball-anim {
+    top: 50px;
+    left: 20%;
+    width: 45px;
+    height: 45px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PGNpcmNsZSBjeD0nMzInIGN5PSczMicgcj0nMjgnIGZpbGw9JyNmNDNmNWUnLz48cGF0aCBkPSdNOCAzMmEyNCAyNCAwIDAgMCA0OCAwJyBmaWxsPSdub25lJyBzdHJva2U9JyNmNTllMGInIHN0cm9rZS13aWR0aD0nNicvPjxwYXRoIGQ9J00zMiA4YTI0IDI0IDAgMCAwIDAgNDgnIGZpbGw9J25vbmUnIHN0cm9rZT0nIzNiODJmNicgc3Ryb2tlLXdpZHRoPSc2Jy8+PC9zdmc+") no-repeat center/contain;
+    animation: playBall 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes playBall {
+    0% {
+        transform: translate(-150px, -100px) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        transform: translate(-30px, 180px) rotate(180deg); /* First bounce */
+    }
+    45% {
+        transform: translate(30px, 70px) rotate(360deg);
+    }
+    60% {
+        transform: translate(80px, 175px) rotate(540deg); /* Second bounce */
+    }
+    75% {
+        transform: translate(120px, 120px) rotate(720deg);
+    }
+    100% {
+        transform: translate(220px, 200px) rotate(900deg); /* Roll off stage */
+        opacity: 0;
+    }
+}
+
+/* Floating Soap Bubbles */
+.soap-bubble {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9) 0%, rgba(6,182,212,0.4) 60%, rgba(16,185,129,0.2) 100%);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: inset 0 0 8px rgba(255,255,255,0.6);
+    animation: bubbleUp 1.8s ease-out forwards;
+}
+
+@keyframes bubbleUp {
+    0% {
+        transform: translate(0, 250px) scale(0.4);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-30px, 120px) scale(1.1);
+    }
+    85% {
+        opacity: 0.8;
+        transform: translate(30px, 40px) scale(0.9);
+    }
+    100% {
+        transform: translate(0, -30px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Sleeping Zzz letters */
+.sleeping-zzz {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #8b5cf6;
+    animation: zzzFloat 2.2s linear forwards;
+    opacity: 0;
+}
+
+@keyframes zzzFloat {
+    0% {
+        transform: translate(30px, 160px) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.9;
+    }
+    50% {
+        transform: translate(10px, 90px) scale(0.9);
+    }
+    80% {
+        opacity: 0.9;
+        transform: translate(40px, 40px) scale(1.2);
+    }
+    100% {
+        transform: translate(20px, -20px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Grooming Comb / Brush Animation */
+.groom-brush-anim {
+    top: 100px;
+    right: 25%;
+    width: 48px;
+    height: 48px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHBhdGggZD0nTTEwIDQwIEw0MCAxMCBMNTAgMjAgTDIwIDUwIFonIGZpbGw9JyNlYzQ4OTknLz48cGF0aCBkPSdNOCAzNiBMMTIgNDIgTTIyIDMyIEwxNiAzOCBNMjYgMjggTDIwIDM0IE0zMCAyNCBMMjQgMzAnIHN0cm9rZT0nd2hpdGUnIHN0cm9rZS13aWR0aD0nNCcgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJy8+PC9zdmc+") no-repeat center/contain;
+    animation: groomBrush 1.6s ease-in-out forwards;
+}
+
+@keyframes groomBrush {
+    0% {
+        transform: translate(120px, -50px) rotate(45deg);
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    45%, 65%, 85% {
+        transform: translate(-20px, 20px) rotate(-15deg);
+    }
+    55%, 75% {
+        transform: translate(10px, -10px) rotate(15deg);
+    }
+    100% {
+        transform: translate(-100px, 80px) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* Heart Sparkles burst */
+.sparkle-particle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #fbbf24;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: sparkleBurst 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes sparkleBurst {
+    0% {
+        transform: translate(0, 160px) scale(0.2) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--dx), var(--dy)) scale(1.1) rotate(var(--rot));
+        opacity: 0;
+    }
+}
+
+/* ==========================================================================
+   PawPal - Animated 2D Vector CSS Pet Rig (Talking Tom Style)
+   ========================================================================== */
+
+/* Pet Type Gradients & Colors */
+.css-pet.dog {
+    --pet-color: #f59e0b;
+    --pet-color-dark: #d97706;
+    --pet-eye-color: #1e293b;
+    --pet-belly-color: #fef3c7;
+}
+.css-pet.cat {
+    --pet-color: #cbd5e1;
+    --pet-color-dark: #94a3b8;
+    --pet-eye-color: #0f172a;
+    --pet-belly-color: #f8fafc;
+}
+.css-pet.rabbit {
+    --pet-color: #ffffff;
+    --pet-color-dark: #cbd5e1;
+    --pet-eye-color: #f43f5e;
+    --pet-belly-color: #ffe4e6;
+}
+.css-pet.bird {
+    --pet-color: #10b981;
+    --pet-color-dark: #047857;
+    --pet-eye-color: #0f172a;
+    --pet-belly-color: #a7f3d0;
+}
+.css-pet.fish {
+    --pet-color: #f97316;
+    --pet-color-dark: #ea580c;
+    --pet-eye-color: #0891b2;
+    --pet-belly-color: #ffedd5;
+}
+.css-pet.hamster {
+    --pet-color: #fb923c;
+    --pet-color-dark: #ea580c;
+    --pet-eye-color: #1e293b;
+    --pet-belly-color: #ffedd5;
+}
+
+/* Master container */
+.css-pet {
+    position: relative;
+    width: 160px;
+    height: 190px;
+    margin: 30px auto 10px;
+    z-index: 2;
+    transform-origin: bottom center;
+}
+
+/* Shading & Highlight for Head */
+.css-pet .pet-head {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    width: 120px;
+    height: 95px;
+    background-image: linear-gradient(135deg, var(--pet-color) 0%, var(--pet-color-dark) 100%);
+    border-radius: 50px 50px 42px 42px;
+    border: 3.5px solid var(--pet-color-dark);
+    box-shadow: inset 5px 5px 0px rgba(255,255,255,0.25), inset -4px -4px 0px rgba(0,0,0,0.08), 0 8px 16px rgba(0,0,0,0.06);
+    z-index: 4;
+    transition: all 0.3s ease;
+    animation: headBreath 3s ease-in-out infinite;
+}
+
+/* Body Shape with highlight */
+.css-pet .pet-body {
+    position: absolute;
+    top: 95px;
+    left: 35px;
+    width: 90px;
+    height: 85px;
+    background-image: linear-gradient(135deg, var(--pet-color) 0%, var(--pet-color-dark) 100%);
+    border-radius: 40px 40px 25px 25px;
+    border: 3.5px solid var(--pet-color-dark);
+    box-shadow: inset 4px 4px 0px rgba(255,255,255,0.2), inset -4px -4px 0px rgba(0,0,0,0.08);
+    z-index: 3;
+    overflow: hidden;
+}
+
+/* Belly Patch */
+.css-pet .pet-body .chest {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 55px;
+    height: 50px;
+    background-color: var(--pet-belly-color);
+    border-radius: 50%;
+    opacity: 0.95;
+    box-shadow: inset -2px -2px 0px rgba(0,0,0,0.05);
+}
+
+/* Arms resting on chest (Front Paws) */
+.css-pet .pet-body::before,
+.css-pet .pet-body::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    width: 20px;
+    height: 32px;
+    background-image: linear-gradient(180deg, var(--pet-color) 0%, var(--pet-color-dark) 100%);
+    border: 2.5px solid var(--pet-color-dark);
+    border-radius: 10px;
+    z-index: 5;
+    transform-origin: top center;
+    box-shadow: inset 2px 2px 0px rgba(255,255,255,0.2), 0 2px 4px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+.css-pet .pet-body::before { left: 10px; transform: rotate(30deg); }
+.css-pet .pet-body::after { right: 10px; transform: rotate(-30deg); }
+
+/* Feet (Bottom Paws) */
+.css-pet .paw {
+    position: absolute;
+    bottom: -4px;
+    width: 26px;
+    height: 16px;
+    background-image: linear-gradient(180deg, var(--pet-color) 0%, var(--pet-color-dark) 100%);
+    border: 3.5px solid var(--pet-color-dark);
+    border-radius: 12px 12px 6px 6px;
+    box-shadow: inset 2px 2px 0px rgba(255,255,255,0.2), 0 3px 6px rgba(0,0,0,0.1);
+    z-index: 4;
+}
+.css-pet .paw-l { left: 45px; }
+.css-pet .paw-r { right: 45px; }
+
+/* Tail */
+.css-pet .tail {
+    position: absolute;
+    bottom: 12px;
+    right: 22px;
+    width: 25px;
+    height: 25px;
+    background-image: linear-gradient(135deg, var(--pet-color) 0%, var(--pet-color-dark) 100%);
+    border: 2.5px solid var(--pet-color-dark);
+    border-radius: 50%;
+    z-index: 1;
+    transform-origin: left bottom;
+    box-shadow: inset 2px 2px 0px rgba(255,255,255,0.2);
+    animation: tailWiggle 1.4s ease-in-out infinite;
+}
+
+/* Pointy fish tail */
+.css-pet.fish .tail {
+    bottom: 30px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-radius: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid var(--pet-color-dark);
+    animation: fishTail 0.6s ease-in-out infinite;
+}
+
+/* Ear components with highlight and pink inner ears */
+.css-pet .ear {
+    position: absolute;
+    background-image: linear-gradient(135deg, var(--pet-color) 0%, var(--pet-color-dark) 100%);
+    border: 3.5px solid var(--pet-color-dark);
+    box-shadow: inset 3px 3px 0px rgba(255,255,255,0.2);
+    z-index: 1;
+}
+.css-pet .ear::after {
+    content: '';
+    position: absolute;
+    background-color: #fda4af; /* Cute baby pink inner ear */
+    border: 1.5px solid #f43f5e;
+    border-radius: inherit;
+    opacity: 0.8;
+}
+
+/* Dog floppy ears */
+.css-pet.dog .ear {
+    top: 20px;
+    width: 26px;
+    height: 60px;
+    border-radius: 10px 10px 22px 22px;
+    transform-origin: top center;
+}
+.css-pet.dog .ear-l { left: 10px; transform: rotate(15deg); }
+.css-pet.dog .ear-r { right: 10px; transform: rotate(-15deg); }
+.css-pet.dog .ear::after {
+    top: 8px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 16px);
+}
+
+/* Cat pointy ears */
+.css-pet.cat .ear {
+    top: 0px;
+    width: 32px;
+    height: 36px;
+    border-radius: 8px 30px 0 0;
+}
+.css-pet.cat .ear-l { left: 24px; transform: rotate(-12deg); }
+.css-pet.cat .ear-r { right: 24px; transform: scaleX(-1) rotate(-12deg); }
+.css-pet.cat .ear::after {
+    bottom: 2px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+}
+
+/* Rabbit long ears */
+.css-pet.rabbit .ear {
+    top: -50px;
+    width: 22px;
+    height: 80px;
+    border-radius: 20px 20px 10px 10px;
+    transform-origin: bottom center;
+}
+.css-pet.rabbit .ear-l { left: 32px; transform: rotate(-8deg); }
+.css-pet.rabbit .ear-r { right: 32px; transform: rotate(8deg); }
+.css-pet.rabbit .ear::after {
+    top: 10px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 18px);
+    background-color: #fda4af;
+}
+
+/* Bird crest feather */
+.css-pet.bird .ear {
+    top: 0px;
+    width: 14px;
+    height: 32px;
+    border-radius: 50% 50% 0 0;
+    background-image: linear-gradient(135deg, #10b981 0%, #047857 100%);
+    border-color: #047857;
+}
+.css-pet.bird .ear-l { left: 65px; transform: rotate(-15deg); }
+.css-pet.bird .ear-r { left: 80px; transform: rotate(15deg); }
+.css-pet.bird .ear::after { display: none; }
+
+/* Fish side fins */
+.css-pet.fish .ear {
+    top: 70px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50% 0 50% 50%;
+    z-index: 5;
+    animation: finFlutter 0.8s ease-in-out infinite;
+}
+.css-pet.fish .ear-l { left: 18px; transform: rotate(45deg); }
+.css-pet.fish .ear-r { right: 18px; transform: scaleX(-1) rotate(45deg); }
+.css-pet.fish .ear::after { display: none; }
+
+/* Hamster round ears */
+.css-pet.hamster .ear {
+    top: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+.css-pet.hamster .ear-l { left: 24px; }
+.css-pet.hamster .ear-r { right: 24px; }
+.css-pet.hamster .ear::after {
+    top: 4px;
+    left: 4px;
+    width: calc(100% - 8px);
+    height: calc(100% - 8px);
+}
+
+/* Eyes, Eyebrows and Blinking */
+.css-pet .eyes {
+    position: absolute;
+    top: 24px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    z-index: 5;
+}
+
+/* Eyebrows via pseudo-elements on the eyes container */
+.css-pet .eyes::before,
+.css-pet .eyes::after {
+    content: '';
+    position: absolute;
+    top: -9px;
+    width: 20px;
+    height: 4px;
+    background-color: var(--pet-color-dark);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.css-pet .eyes::before { left: 22px; transform: rotate(-5deg); }
+.css-pet .eyes::after { right: 22px; transform: rotate(5deg); }
+
+.css-pet .eye {
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    border: 3px solid var(--pet-color-dark);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: blinkEye 4.5s infinite;
+}
+
+/* Curious Looking Pupils */
+.css-pet .pupil {
+    width: 11px;
+    height: 11px;
+    background-color: var(--pet-eye-color);
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.2s ease;
+    animation: lookAround 8s infinite ease-in-out;
+}
+
+/* Pupil shine reflection */
+.css-pet .eye::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 5px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+/* Muzzle, Nose, Mouth */
+.css-pet .muzzle {
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 6;
+}
+
+.css-pet .nose {
+    width: 16px;
+    height: 9px;
+    background-color: #1e293b;
+    border-radius: 6px;
+}
+
+/* Cat whiskers */
+.css-pet.cat .cheeks::before,
+.css-pet.cat .cheeks::after {
+    content: '——';
+    position: absolute;
+    top: 10px;
+    font-size: 10px;
+    color: var(--pet-color-dark);
+    letter-spacing: -2px;
+    font-weight: bold;
+    opacity: 0.65;
+    transition: all 0.2s ease;
+}
+.css-pet.cat .cheeks::before { left: -14px; transform: rotate(-4deg); }
+.css-pet.cat .cheeks::after { right: -14px; transform: rotate(4deg); }
+
+/* Bird beak */
+.css-pet.bird .nose {
+    width: 22px;
+    height: 18px;
+    background-color: #fb923c;
+    border: 2.5px solid #d97706;
+    border-radius: 4px 4px 12px 12px;
+}
+
+.css-pet .mouth {
+    width: 18px;
+    height: 8px;
+    border: 2.5px solid var(--pet-color-dark);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    margin-top: 3px;
+    transition: all 0.2s ease;
+}
+
+/* Fish puckered mouth */
+.css-pet.fish .mouth {
+    width: 10px;
+    height: 10px;
+    border: 2.5px solid var(--pet-color-dark);
+    border-radius: 50%;
+    margin-top: 1px;
+}
+
+/* Blush cheeks */
+.css-pet .cheeks {
+    position: absolute;
+    top: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 14px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.css-pet .blush {
+    width: 16px;
+    height: 10px;
+    background-color: #f43f5e;
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(1px);
+    transition: opacity 0.3s ease;
+}
+
+/* Red Collar and Gold Tag */
+.css-pet .pet-head::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 10px;
+    background-image: linear-gradient(180deg, #ef4444 0%, #b91c1c 100%);
+    border: 2px solid #991b1b;
+    border-radius: 6px;
+    z-index: 9;
+}
+.css-pet .pet-head::before {
+    content: '';
+    position: absolute;
+    bottom: -11px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background-image: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    border: 1.5px solid #b45309;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+/* Hide collar for fish */
+.css-pet.fish .pet-head::after,
+.css-pet.fish .pet-head::before {
+    display: none;
+}
+
+/* ============================================
+   Action Keyframe Animations
+   ============================================ */
+
+/* Head Breathing loop */
+@keyframes headBreath {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+}
+
+/* Tail wiggle */
+@keyframes tailWiggle {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(24deg); }
+}
+
+/* Fish tail swimming wiggle */
+@keyframes fishTail {
+    0%, 100% { transform: scaleY(1) rotate(0deg); }
+    50% { transform: scaleY(0.78) rotate(18deg); }
+}
+
+/* Fish fin flutter */
+@keyframes finFlutter {
+    0%, 100% { transform: rotate(45deg) scale(1); }
+    50% { transform: rotate(28deg) scale(0.92); }
+}
+
+/* Blinking eyes */
+@keyframes blinkEye {
+    0%, 94%, 98%, 100% { transform: scaleY(1); }
+    96% { transform: scaleY(0); }
+}
+
+/* Pupils drifting lookAround */
+@keyframes lookAround {
+    0%, 30%, 75%, 100% { transform: translate(0, 0); }
+    35%, 50% { transform: translate(-3px, -1px); }
+    55%, 70% { transform: translate(3px, 1px); }
+}
+
+/* Dynamic Pulsing shadow */
+.pet-stage-shadow {
+    animation: shadowPulse 3s ease-in-out infinite !important;
+}
+@keyframes shadowPulse {
+    0%, 100% { transform: scale(1); opacity: 0.12; }
+    50% { transform: scale(0.88); opacity: 0.08; }
+}
+
+/* ============================================
+   Active State Clamper Modifiers
+   ============================================ */
+
+/* 1. Eating State (chewing) */
+.css-pet.eating .mouth {
+    height: 16px;
+    background-color: #1e293b;
+    border-radius: 50%;
+    animation: chewing 0.25s infinite;
+}
+@keyframes chewing {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.35); }
+}
+.css-pet.eating .pet-head {
+    animation: eatingHead 0.25s infinite;
+}
+@keyframes eatingHead {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px) scaleY(0.96); }
+}
+
+/* 2. Drinking State */
+.css-pet.drinking .mouth {
+    height: 12px;
+    background-color: #06b6d4;
+    border-radius: 50%;
+    animation: drinking 0.3s infinite;
+}
+@keyframes drinking {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* 3. Playing State (excitement & wiggling arms) */
+.css-pet.playing {
+    animation: bouncePlay 0.5s ease infinite;
+}
+.css-pet.playing .tail {
+    animation: tailWiggleFast 0.2s ease infinite;
+}
+.css-pet.playing .pet-body::before {
+    animation: wiggleArmL 0.25s infinite alternate;
+}
+.css-pet.playing .pet-body::after {
+    animation: wiggleArmR 0.25s infinite alternate;
+}
+
+@keyframes bouncePlay {
+    0%, 100% { transform: translateY(0) scaleY(1); }
+    50% { transform: translateY(-20px) scaleY(1.05); }
+}
+@keyframes tailWiggleFast {
+    0%, 100% { transform: rotate(-12deg); }
+    50% { transform: rotate(32deg); }
+}
+@keyframes wiggleArmL {
+    0% { transform: rotate(30deg); }
+    100% { transform: rotate(70deg); }
+}
+@keyframes wiggleArmR {
+    0% { transform: rotate(-30deg); }
+    100% { transform: rotate(-70deg); }
+}
+
+/* Active playing stage shadow link */
+.css-pet.playing ~ .pet-stage-shadow {
+    animation: shadowPlay 0.5s ease infinite !important;
+}
+@keyframes shadowPlay {
+    0%, 100% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(0.55); opacity: 0.03; }
+}
+
+/* 4. Sleeping State */
+.css-pet.sleeping .eye {
+    animation: none;
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--pet-color-dark);
+    border: none;
+}
+.css-pet.sleeping .eye::after,
+.css-pet.sleeping .pupil {
+    display: none;
+}
+.css-pet.sleeping .pet-head {
+    animation: sleepBreath 3.5s ease-in-out infinite;
+}
+.css-pet.sleeping .mouth {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #1e293b;
+}
+.css-pet.sleeping .eyes::before { transform: rotate(0deg) translateY(2px); }
+.css-pet.sleeping .eyes::after { transform: rotate(0deg) translateY(2px); }
+
+@keyframes sleepBreath {
+    0%, 100% { transform: translateY(0) scaleY(1); }
+    50% { transform: translateY(3px) scaleY(0.95); }
+}
+.css-pet.sleeping ~ .pet-stage-shadow {
+    animation: sleepShadow 3.5s ease-in-out infinite !important;
+}
+@keyframes sleepShadow {
+    0%, 100% { transform: scale(1); opacity: 0.12; }
+    50% { transform: scale(1.08); opacity: 0.15; }
+}
+
+/* 5. Happy / Ecstatic State (raising eyebrows) */
+.css-pet.happy .mouth,
+.css-pet.ecstatic .mouth {
+    height: 16px;
+    width: 24px;
+    border-radius: 0 0 16px 16px;
+    background-color: #ef4444;
+    border-color: #b91c1c;
+}
+.css-pet.happy .blush,
+.css-pet.ecstatic .blush {
+    opacity: 0.75;
+}
+.css-pet.happy .eyes::before { transform: translateY(-3px) rotate(-8deg); }
+.css-pet.happy .eyes::after { transform: translateY(-3px) rotate(8deg); }
+
+/* 6. Sad / Sick State (worried eyebrows) */
+.css-pet.sad .mouth,
+.css-pet.sick .mouth {
+    transform: rotate(180deg);
+    margin-top: 6px;
+}
+.css-pet.sad .pet-head,
+.css-pet.sick .pet-head {
+    transform: translateY(4px) rotate(2deg);
+}
+.css-pet.sick .blush {
+    background-color: #22c55e; /* green sick cheeks */
+    opacity: 0.5;
+}
+.css-pet.sad .eyes::before { transform: rotate(15deg); }
+.css-pet.sad .eyes::after { transform: rotate(-15deg); }
+.css-pet.sick .eyes::before { transform: rotate(12deg); }
+.css-pet.sick .eyes::after { transform: rotate(-12deg); }
+
+/* ==========================================================================
+   PawPal - User App Layout (Sidebar, Topbar & Dashboard Aesthetics)
+   ========================================================================== */
+
+:root {
+    --user-sidebar-bg: #1e1e2d;
+    --user-sidebar-hover: rgba(255, 255, 255, 0.06);
+    --user-sidebar-active: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(244, 63, 94, 0.15));
+    --user-sidebar-border: rgba(255, 255, 255, 0.08);
+    --user-sidebar-text: #a1a5b7;
+    --user-sidebar-text-active: #ffffff;
+    --user-topbar-bg: #ffffff;
+    --user-body-bg: #f5f8fa;
+    --user-border: #f1f3f7;
+}
+
+/* User layout page structure */
+.user-layout-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--user-body-bg);
+}
+
+/* Sidebar styling */
+.user-sidebar {
+    width: 260px;
+    min-width: 260px;
+    background-color: var(--user-sidebar-bg);
+    border-right: 1px solid var(--user-sidebar-border);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-sidebar .sidebar-brand {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.user-sidebar .sidebar-nav {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1.5rem 1rem;
+}
+
+/* Custom scrollbar for sidebar nav */
+.user-sidebar .sidebar-nav::-webkit-scrollbar {
+    width: 4px;
+}
+.user-sidebar .sidebar-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.user-sidebar .sidebar-link {
+    color: var(--user-sidebar-text);
+    padding: 0.85rem 1.15rem;
+    border-radius: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.user-sidebar .sidebar-link i {
+    font-size: 1.15rem;
+    width: 24px;
+    text-align: center;
+    transition: transform 0.25s ease;
+}
+
+.user-sidebar .sidebar-link:hover {
+    color: var(--user-sidebar-text-active);
+    background-color: var(--user-sidebar-hover);
+    transform: translateX(4px);
+}
+
+.user-sidebar .sidebar-link:hover i {
+    transform: scale(1.15);
+}
+
+.user-sidebar .sidebar-link.active {
+    color: var(--user-sidebar-text-active);
+    background: var(--user-sidebar-active);
+    border-left: 4px solid var(--accent);
+    padding-left: calc(1.15rem - 4px);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Content wrapper */
+.user-main-wrapper {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* User topbar */
+.user-top-bar {
+    background-color: var(--user-topbar-bg);
+    border-bottom: 1px solid #eef2f5;
+    height: 70px;
+    z-index: 1000;
+}
+
+.user-content-area {
+    background-color: var(--user-body-bg);
+    min-height: calc(100vh - 120px);
+}
+
+/* Sidebar Backdrop on Mobile */
+.sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: 1040;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive sidebar behaviors */
+@media (max-width: 991.98px) {
+    .user-sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .user-sidebar.active {
+        transform: translateX(0);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+    }
+    
+    .user-main-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+}
